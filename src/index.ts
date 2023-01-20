@@ -38,6 +38,8 @@ function checkWord( secret: string, guess: string ): string{
   return result;
 }
 
+console.log('test');
+
 
 
 //candidate
