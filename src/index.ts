@@ -6,7 +6,37 @@ console.log(mergedArray);
 
 
 //wordle
+let secWord: string = 'spoke';
+let guess: string = 'scope';
+let result: string = '';
 
+const attempts: Array<string> = ['rains', 'shout', 'scope', 'spoke'];
+
+for(const word of attempts){
+  const result = checkWord(word, 'spoke');
+  console.log(result);
+}
+
+function checkWord( secret: string, guess: string ): string{
+  let result: string = '';
+  let letter1: string;
+  let letter2: string;
+  for( let i: number = 0; i < secret.length; i += 1) {
+    letter1 = secret[i];
+    letter2 = guess[i];
+    if (letter1 === letter2){
+      result = result + "c";
+    }
+    else if (letter1 !== letter2 && secret.includes(letter2)){
+      result = result + 'p';
+    }
+    else {
+      result = result + 'a';
+    }
+  }
+
+  return result;
+}
 
 
 
@@ -37,6 +67,12 @@ let roSpent: number = roseOlsen.funding / roTotal;
 let lwSpent: number = leonardWillis.funding / lwTotal;
 let ntSpent: number = nateTaylor.funding / ntTotal;
 
+
+console.log(`Edward Underwood -- ${euTotal} -- ${euPercentage}`);
+console.log(`Rose Olsen -- ${roTotal} -- ${roPercentage}`);
+console.log(`Leonard Willis -- ${lwTotal} -- ${lwPercentage}`);
+console.log(`Nathaniel Taylor -- ${ntTotal} -- ${ntPercentage}`);
+
 function getTotal( arry: Array<number>): number{
   let total: number = 0;
     for(let i: number = 0; i < arry.length; i += 1){
@@ -59,7 +95,7 @@ function merge (arr1: Array<number>, arr2: Array<number>): Array<number>{
   let position: number = 0;
     for(let i: number = 0; i < arr1.length; i += 2){
       arr3[i] = arr1[position];
-      arr3[i + 1] = arr1[position];
+      arr3[i + 1] = arr2[position];
       position += 1;
     }
     return arr3;
