@@ -32,6 +32,10 @@ let euPercentage: number = euTotal / overallTotal;
 let roPercentage: number = roTotal / overallTotal;
 let lwPercentage: number = lwTotal / overallTotal;
 let ntPercentage: number = ntTotal / overallTotal;
+let euSpent: number = edUnderwood.funding / euTotal;
+let roSpent: number = roseOlsen.funding / roTotal;
+let lwSpent: number = leonardWillis.funding / lwTotal;
+let ntSpent: number = nateTaylor.funding / ntTotal;
 
 function getTotal( arry: Array<number>): number{
   let total: number = 0;
